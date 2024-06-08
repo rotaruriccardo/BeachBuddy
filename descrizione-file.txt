@@ -1,0 +1,47 @@
+BEACH BUDDY
+
+- index.html -> Contiene l'homepage del sito con possibilità di login/registrazione
+
+- homepage.css -> Il css per la grafica dell'homepage con annesse font utilizzate e media queries per rendere il design responsive
+
+- homepage.js -> Il javascript per l'homepage con gli script per aprire i popup di login/register e altre funzionalità grafiche
+
+- Cartella registrazione {
+	- register.php -> Il php per la registrazione dell'utente tramite connessione a un database sql
+
+	- email-ok.html -> Pagina di appoggio per confermare l'avvenuta registrazione con successo e redirect all'homepage
+
+	- email-presa.html -> Pagina di appoggio per segnalare la presenza di un'email già registrata nel sistema con link all'homepage per il login 
+}
+
+- Cartella login {
+	-login.php -> Il php per il login al sito tramite query sql che controlla nel database la correttezza dei dati inseriti
+}
+
+- cartella bootstrap {
+	Contiene librerie che facilitano l'utilizzo di css e javascript
+}
+
+- cartella assets {
+	Contiene le immagini utilizzate all'interno del sito
+}
+
+- Cartella area_riservata {
+	- index_areariservata.php -> Una copia dell'homepage accessibile dopo il login che contiene i link alle funzionalità principali del sito come la prenotazione dei posti in spiaggia. Realizzato in php per mantenere la sessione di login rendendo di fatto il sito e le funzionalità accessibili solo grazie ad esso
+	
+	- arearis.js -> Script ripresi dallo script dell'hompage con qualche differenza come la rimozione del login e registrazione
+	
+	- stile-homepage.css -> Il css dell'area riservata con qualche modifica rispetto a quello dell'homepage iniziale
+	
+	- index_prenotazione.php -> L'html per la prenotazione, realizzato in php per mantenere la sessione aperta, che contiene la richiesta ajax al file verifica_disponibilita.php grazie alla quale crea la griglia degli ombrelloni, differenziando tra posti disponibili e non grazie ad una select query che accede al database. Contiene anche un form che invia i dati riguardanti la prenotazione, come la spiagga, la data, i servizi e l'ombrellone scelto, ad un php che li inserisce nella tabella prenotazioni del database. 
+	
+	- prenotazione.js -> Script per le funzionalità grafiche e pratiche della pagina con qualche funzione utile a calcolare il prezzo totale della prenotazione
+	
+	- stile-index_prenotazione.css -> Il css che riguarda la grafica delle pagine index_prenotazione.php ma anche index_mierecensioni.php e index_mieprenotazioni.php
+	
+	- prenota.php -> Contiene il calcolo del costo totale e l'inserimento dei dati riguardanti la prenotazione nel database sql
+	
+	- index_mieprenotazioni.php -> Contiene l'html dove viene visualizzata la tabella riguardante le prenotazioni legate all'utente connesso. è realizzato in php perché contiene le query con cui vengono presi i dati dal database e inseriti nella tabella. Contiene inoltre alcune funzioni javascript
+	
+	- index_mierecensioni.php -> Contiene l'html dove viene visualizzata la tabella riguardante le recensioni legate all'utente connesso e un popup grazie al quale aggiungerne di nuove. È realizzato in php perché contiene le query con cui vengono presi i dati dal database e inseriti nella tabella. Contiene inoltre alcune funzioni javascript
+}
